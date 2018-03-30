@@ -1,0 +1,12 @@
+---
+applications:
+- name: NsbClassicalSelfHostHandler
+  memory: 1024m
+  buildpack: dicf_hwc_buildpack_latest
+  stack: windows2012R2
+  command: cmd /c NServiceBus.Host.exe NServiceBusHandlers.dll
+  no-route: true
+  health-check-type: process
+  path: .\bin\Debug
+  services:
+    - RabbitMQForClassicalNSB

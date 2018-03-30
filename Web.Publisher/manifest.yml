@@ -1,0 +1,9 @@
+---
+applications:
+- name: NsbClassicalWebPublisher_PCFH
+  memory: 1024m
+  buildpack: dicf_hwc_buildpack_latest
+  stack: windows2012R2
+  path: .\bin\Release\PublishOutput
+  services:
+    - RabbitMQForClassicalNSB
